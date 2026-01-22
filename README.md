@@ -127,6 +127,27 @@ Matlibplot
 Seaborn
 Plotly
 
+## Conclusion
+The analysis of over 10,000 hotel bookings across City Hotel and Resort Hotel reveals distinct patterns in performance, guest behaviour, and revenue drivers. By examining ADR, occupancy, cancellations, booking channels, and seasonal trends, we’ve uncovered insights that directly address the business requirements.
+
+City Hotels consistently maintain higher occupancy rates, especially during business-heavy months, suggesting stronger year-round demand. Resort Hotels, on the other hand, achieve higher ADR during peak seasons, indicating strong pricing power during holidays and summer periods.
+
+A key finding is the dominance of TA/TO channels, which drive a large share of bookings but also incur high commission costs. This reduces net profitability despite strong booking volume. Encouraging more direct or corporate bookings could significantly improve margins.
+Seasonality plays a major role: Resort Hotels peak in summer, while City Hotels perform steadily year-round, requiring tailored pricing and staffing strategies.
+
+Additionally, the ADR by Market Segment analysis reveals that:
+
+Online TA and Direct bookings yield the highest ADR, both approaching £120.
+
+Aviation bookings also show strong ADR, around £100.
+
+Complementary bookings generate the lowest ADR, below £10, offering minimal revenue contribution.
+
+Corporate and Offline TA/TO segments fall in the mid-to-low range, suggesting potential for pricing optimization.
+
+This segmentation insight reinforces the importance of channel strategy: not all bookings contribute equally to revenue, and high-volume channels may dilute profitability if ADR is low or commissions are high.
+
+Overall, City Hotels deliver consistent occupancy, while Resort Hotels excel in high-ADR seasonal windows. Profitability is shaped not just by volume, but by channel mix, guest behavior, and pricing strategy. Targeted interventions — such as shifting demand toward higher-yield segments and optimizing seasonal pricing — can significantly enhance performance across both hotel types.
 ## Credits 
 
 the dataset was collected from Kaggle.from the user (Narges Sedrehneshin)
