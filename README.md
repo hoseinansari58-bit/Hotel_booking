@@ -1,90 +1,136 @@
-# Project XYZ
+# Hotel Booking
 
-**Project XYZ** is a comprehensive data analysis tool designed to streamline data exploration, analysis, and visualisation. The tool supports multiple data formats and provides an intuitive interface for both novice and expert data scientists.
-
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 
 ## Dataset Content
-* Describe your dataset. Choose a dataset of reasonable size to avoid exceeding the repository's maximum size of 100Gb.
+This dataset contains over 10,000 rows and 20 columns detailing guest bookings across two hotel types: Resort Hotel and City Hotel. It was sourced from Kaggle and thoroughly cleaned and analyzed using Matplotlib, Seaborn, and Plotly.
+
+Important: Plotly charts are interactive and may not render correctly in GitHub’s notebook preview.
+To view them properly, please download the notebook and open it in Jupyter or VS Code.
 
 
 ## Business Requirements
-* Describe your business requirements
+Determine which hotel type (City Hotel vs. Resort Hotel) performs better during the same time periods.  Performance will be evaluated using key metrics such as occupancy rate, average daily rate (ADR),behavior patterns, distribution channel etc.
 
 
-## Hypothesis and how to validate?
-* List here your project hypothesis(es) and how you envision validating it (them) 
+## Seasonality affects the two hotels differently?
+Seasonal patterns drive pricing and staffing decisions.
+How to validate:
+Group by month and hotel.
+Compare ADR, occupancy, and booking volume.
+Plot seasonal curves.
+![monthly revenue trend](output/charts/monthly_revenue_trend.png)
+
+Even though Resort Hotels hit higher revenue peaks during the summer months compared to City Hotels, their performance shows a steep drop afterward followed by a slow recovery. On the other hand, City Hotels show a more stable and consistent revenue trend, with fluctuations that feel more controlled and less extreme than the Resort Hotel. This suggests that Resort Hotels are more dependent on seasonal tourism, while City Hotels benefit from steadier demand throughout the year.
+
+
+## High reliance on TA/TO channels reduces net profit due to higher commission fees. 
+![Distribution Channel](output/charts/distribution_channel_share.png)
+The pie chart gives us a clear picture of how bookings are distributed across different channels. It’s immediately obvious that TA/TO (Travel Agents/Tour Operators) dominate the scene, accounting for over 79% of all bookings. Direct bookings come in second at around 15%, followed by Corporate with just under 6%. GDS and Undefined barely register, making up a tiny fraction of the total.
+
+This tells us that most guests are coming through third-party intermediaries rather than booking directly or through corporate deals.
+
+To increase the bottom line and reduce the commission paid to TA/TO our marketing strategy should focus on promoting more direct or corporate bookings.
+
+in addition our analysis indicates that city hotels generate more revenue throughout the year and has a healthy and stable trend
+![Revenue](output/charts/revenue_trend.png)
+
+
 
 ## Project Plan
-* Outline the high-level steps taken for the analysis.
-* How was the data managed throughout the collection, processing, analysis and interpretation steps?
+Outline the high-level steps taken for the analysis.
+The project followed a structured, end‑to‑end data analytics workflow to ensure clarity, reproducibility, and meaningful insights:
+* Created a clean folder structure
+* Downloaded the Hotel Booking Demand dataset from Kaggle.
+* Imported the raw CSV file into the project’s data/raw directory.
+
+### How was the data managed throughout the collection, processing, analysis and interpretation steps?
+#### Data Cleaning & Pre‑Processing
+Handled missing values, inconsistent formats, and outliers.
+Converted date components into a proper datetime column.
+Created new engineered features (e.g., stay_length, has_breakfast, is_occupied).
+Saved the cleaned dataset into data/processed.
+
+Exploratory Data Analysis (EDA)
+
+Used Matplotlib and Seaborn for static visualizations.
+Used Plotly for interactive charts (not visible on GitHub, but viewable locally).
+Explored distributions, correlations, seasonal patterns, and hotel performance metrics.
+
 * Why did you choose the research methodologies you used?
 
+Because the goal was to understand patterns, trends, and relationships in hotel booking behavior. 
+Seasonal trends
+Differences between hotel types
+Booking channel performance
+Guest behavior patterns
 ## The rationale to map the business requirements to the Data Visualisations
-* List your business requirements and a rationale to map them to the Data Visualisations
+To compare performance between City Hotel and Resort Hotel, we need visualisations that reveal differences in demand, pricing, cancellations, and guest behaviour over time. Time‑series and comparative charts make these differences visible and measurable.
+* Pie Chart
+Shows Distribution channel
+
+* Line charts (ADR over time)  
+Compares pricing strategies and revenue potential.
+
+* Monthly booking volume bar chart  
+Highlights seasonal demand patterns.
 
 ## Analysis techniques used
-* List the data analysis methods used and explain limitations or alternative approaches.
-* How did you structure the data analysis techniques. Justify your response.
+#### List the data analysis methods used and explain limitations or alternative approaches.
+* Exploratory Data Analysis (EDA)
+
+ Used descriptive statistics, distribution plots, and summary tables to understand the structure of the dataset.Tools: Pandas, Matplotlib, Seaborn, Plotly.
+* Limitations:
+
+EDA is descriptive, not predictive.
+It highlights patterns but cannot confirm causation.
+Interactive Plotly charts do not render on GitHub, requiring static PNG exports.
+
+* How did you structure the data analysis techniques. Justify your response. Before any modelling or comparison, I explored the dataset to understand distributions, missing values, and data types.Created meaningful variables (e.g., stay length, breakfast indicator) and fixed date formats.
+Justification: Raw data rarely answers business questions directly; engineered features unlock deeper insights.
+Grouped data by hotel type, month, and booking characteristics.
+Justification: The business requirement focuses on comparing hotel performance over time.
+Investigated booking channels, lead times, cancellations, and meal types.
+Justification: These factors directly influence profitability and operational decisions.
 * Did the data limit you, and did you use an alternative approach to meet these challenges?
+No revenue column: Revenue must be inferred from ADR × stay length × occupancy.
+No cost data: Profitability cannot be calculated precisely.
+Limited time range: Only three years of data restrict long‑term trend analysis.
+Plotly charts not visible on GitHub: Interactive insights are lost in the online preview.
+Categorical variables with many levels: Harder to visualise cleanly.
 * How did you use generative AI tools to help with ideation, design thinking and code optimisation?
-
+Generative AI tools were used strategically throughout the project to enhance workflow and creativity:
+Helped structure the project into clear business requirements, analytical steps, and insights.
+Assisted in designing a clean folder structure and reproducible workflow.
+Provided guidance on how to communicate insights effectively for non‑technical stakeholders.
+Suggested more efficient Pandas operations (e.g., vectorised feature engineering).
+Helped debug issues with date parsing, Plotly exports, and path handling.
+Provided cleaner, more readable versions of visualisation code.
+Assisted in writing polished explanations, README sections, and insight summaries.
+Ensured the narrative remained clear, professional, and business‑focused.
 ## Ethical considerations
-* Were there any data privacy, bias or fairness issues with the data?
-* How did you overcome any legal or societal issues?
+* Were there any data privacy, bias or fairness issues with the data? As soon as the data loaded the personal details such as Name,Email,Phone number and Credit card number were dropped permanently 
+* How did you overcome any legal or societal issues? the data was in a public domain however when i produced the data i removed all the personal data and referenced that the data was obtained from Kaggle and who was the publisher.
 
-## Dashboard Design
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
-* Later, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but subsequently you used another plot type).
-* How were data insights communicated to technical and non-technical audiences?
-* Explain how the dashboard was designed to communicate complex data insights to different audiences. 
 
-## Unfixed Bugs
-* Please mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation are not valid reasons to leave bugs unfixed.
-* Did you recognise gaps in your knowledge, and how did you address them?
-* If applicable, include evidence of feedback received (from peers or instructors) and how it improved your approach or understanding.
 
-## Development Roadmap
-* What challenges did you face, and what strategies were used to overcome these challenges?
-* What new skills or tools do you plan to learn next based on your project experience? 
-
-## Deployment
-### Heroku
-
-* The App live link is: https://YOUR_APP_NAME.herokuapp.com/ 
-* Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-* The project was deployed to Heroku using the following steps.
-
-1. Log in to Heroku and create an App
-2. From the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
 
 
 ## Main Data Analysis Libraries
 * Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
-
+Numpy
+Pandas
+Matlibplot
+Seaborn
+Plotly
 
 ## Credits 
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
-* You can break the credits section up into Content and Media, depending on what you have included in your project. 
+the dataset was collected from Kaggle.from the user (Narges Sedrehneshin)
 
-### Content 
 
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-
-### Media
-
-- The photos used on the home and sign-up page are from This Open-Source site
-- The images used for the gallery page were taken from this other open-source site
 
 
 
 ## Acknowledgements (optional)
-* Thank the people who provided support through this project.
+* Thank the people who provided support through this project especially Vasi and Mark and Neil.
