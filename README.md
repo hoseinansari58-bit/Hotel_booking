@@ -19,12 +19,14 @@ How to validate:
 Group by month and hotel.
 Compare ADR, occupancy, and booking volume.
 Plot seasonal curves.
+
 ![monthly revenue trend](output/charts/monthly_revenue_trend.png)
 
 Even though Resort Hotels hit higher revenue peaks during the summer months compared to City Hotels, their performance shows a steep drop afterward followed by a slow recovery. On the other hand, City Hotels show a more stable and consistent revenue trend, with fluctuations that feel more controlled and less extreme than the Resort Hotel. This suggests that Resort Hotels are more dependent on seasonal tourism, while City Hotels benefit from steadier demand throughout the year.
 
 
 ## High reliance on TA/TO channels reduces net profit due to higher commission fees. 
+
 ![Distribution Channel](output/charts/distribution_channel_share.png)
 The pie chart gives us a clear picture of how bookings are distributed across different channels. It’s immediately obvious that TA/TO (Travel Agents/Tour Operators) dominate the scene, accounting for over 79% of all bookings. Direct bookings come in second at around 15%, followed by Corporate with just under 6%. GDS and Undefined barely register, making up a tiny fraction of the total.
 
@@ -33,6 +35,7 @@ This tells us that most guests are coming through third-party intermediaries rat
 To increase the bottom line and reduce the commission paid to TA/TO our marketing strategy should focus on promoting more direct or corporate bookings.
 
 in addition our analysis indicates that city hotels generate more revenue throughout the year and has a healthy and stable trend
+
 ![Revenue](output/charts/revenue_trend.png)
 
 
